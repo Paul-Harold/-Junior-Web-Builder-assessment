@@ -1,4 +1,3 @@
-/* --- Global Styles --- */
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
@@ -14,7 +13,6 @@ h1, h2, h3 {
   --dark: #1a1a1a;
 }
 
-/* --- Header / Navbar (Centered Logo Revamp) --- */
 .navbar {
     width: 1100px;
     margin: 0 auto;
@@ -24,12 +22,11 @@ h1, h2, h3 {
     padding: 80px 0; 
     position: relative;
     background: #fff;
-    min-width: 1100px; /* Keeps layout stable */
+    min-width: 1100px; 
 }
 .hamburger {
     cursor: pointer;
     font-size: 1.5rem;
-    /* Add a little z-index to ensure it's always clickable above the logo area */
     z-index: 10;
     color: #333;
 }
@@ -44,36 +41,36 @@ h1, h2, h3 {
 .navbar::after {
     content: '';
     position: absolute;
-    bottom: -20px; /* Positions it right at the start of the Hero */
+    bottom: -20px; 
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid #fff; /* Matches navbar color */
+    border-top: 20px solid #fff; 
     z-index: 10;
 }
 .Logo img {
-    height: 135px; /* Adjusted to balance with the 80px padding */
+    height: 135px; 
     width: auto;
 }
 .sidebar {
     position: fixed;
     top: 0;
-    left: -320px; /* Moves it completely out of view */
+    left: -320px;
     width: 300px;
     height: 100%;
     background: white;
-    transition: transform 0.3s ease, visibility 0.3s; /* Smooth transition */
-    visibility: hidden; /* Hides the X button and content entirely */
+    transition: transform 0.3s ease, visibility 0.3s; 
+    visibility: hidden; 
     z-index: 2000;
     padding: 60px 40px;
     box-shadow: 5px 0 15px rgba(0,0,0,0.1);
 }
 .sidebar.active {
     left: 0;
-    visibility: visible; /* Shows everything when hamburger is clicked */
+    visibility: visible; 
 }
 
 .nav-links {
@@ -102,7 +99,7 @@ h1, h2, h3 {
     font-size: 1.5rem;
     cursor: pointer;
     color: #333;
-    font-family: Arial, sans-serif; /* Clean look for the X */
+    font-family: Arial, sans-serif; 
 }
 .overlay {
     position: fixed;
@@ -122,26 +119,23 @@ h1, h2, h3 {
     width: 100%;
     height: 700px;
     position: relative;
-    /* FIX: background-image only takes the URL */
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
         url('https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/mtn%20falls%20pond.jpg/:/rs=w:2000,m');
-    /* These handle the sizing and sticky effect correctly */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
     
-    /* Centering logic for text and button */
     display: flex;
-    flex-direction: column; /* Stacks text above button */
+    flex-direction: column; 
     align-items: center;    
     justify-content: center; 
     color: white;
     text-align: center;
 }
 .hero h1 {
-    font-family: 'Playfair Display', serif; /* Import this via Google Fonts */
+    font-family: 'Playfair Display', serif; 
     font-size: 4rem;
     text-transform: uppercase;
     margin: 10px 0 20px 0;
@@ -162,13 +156,12 @@ h1, h2, h3 {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 15px solid white; /* Matches the white navbar above */
+    border-top: 15px solid white;
     z-index: 5;
 }
 .hero-content {
     text-align: center;
     z-index: 5;
-    /* Subtle text shadow helps readability against light mountain peaks */
     text-shadow: 2px 2px 15px rgba(0,0,0,0.4); 
     transform: translateY(180px);
 }
@@ -216,10 +209,9 @@ h1, h2, h3 {
     color: white;
 }
 
-/* --- Realtor Bio --- */
 .realtor-bio {
     padding: 120px 0;
-    background-color: #161616; /* Deep charcoal/black */
+    background-color: #161616; 
     color: white;
     min-width: 1100px;
 }
@@ -230,13 +222,12 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 100px; /* Large gap for a spacious, luxury feel */
+    gap: 100px; 
 }
 
-/* Image Container with Framing */
 .bio-image {
     position: relative;
-    flex: 0 0 400px; /* Fixed width for the portrait */
+    flex: 0 0 400px; 
 }
 
 .bio-image img {
@@ -245,10 +236,10 @@ h1, h2, h3 {
     display: block;
     position: relative;
     z-index: 2;
-    filter: grayscale(10%); /* Optional: subtle desaturation for a "classic" look */
+    filter: grayscale(10%); 
 }
 
-/* The Gold Frame behind the image */
+
 .bio-image::after {
     content: '';
     position: absolute;
@@ -260,7 +251,7 @@ h1, h2, h3 {
     z-index: 1;
 }
 
-/* Text Styling */
+
 .bio-content {
     flex: 1;
 }
@@ -285,7 +276,7 @@ h1, h2, h3 {
     font-weight: 300;
     font-size: 1.1rem;
     letter-spacing: 4px;
-    color: #a0a0a0; /* Muted gray for the sub-info */
+    color: #a0a0a0; 
     margin-bottom: 40px;
     text-transform: uppercase;
 }
@@ -371,13 +362,12 @@ h1, h2, h3 {
   transform: scale(1.05);
 }
 
-/* Fixed Content Card */
 .vp-content-card {
-  width: 440px; /* 40% of 1100px roughly */
-  flex: none; /* Prevents shrinking/growing */
+  width: 440px; 
+  flex: none; 
   background: white;
   padding: 60px;
-  margin-left: -100px; /* Overlap from reference image */
+  margin-left: -100px; 
   z-index: 2;
   box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
   box-sizing: border-box;
@@ -412,7 +402,6 @@ h1, h2, h3 {
   padding-bottom: 5px;
 }
 
-/* Unique classes for the Guide section */
 .vp-card-subtitle {
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -421,15 +410,15 @@ h1, h2, h3 {
   display: block;
   margin-bottom: 10px;
 }
-/* --- Services Section (Fixed Size) --- */
+
 .services {
   padding: 100px 0;
   background-color: #ffffff;
-  min-width: 1100px; /* Ensures background doesn't clip */
+  min-width: 1100px; 
 }
 
 .services-container {
-  width: 1100px; /* Locked width to match VP */
+  width: 1100px; 
   margin: 0 auto;
 }
 
@@ -453,30 +442,29 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
-/* Fixed Grid Layout */
 .services-grid {
   display: flex;
-  justify-content: space-between; /* Evenly spaces the 3 fixed cards */
+  justify-content: space-between;
   width: 1100px;
 }
 
 .service-card {
-  width: 340px; /* Fixed width (340 * 3 + gaps = ~1100) */
-  flex: none; /* Prevents scaling */
+  width: 340px; 
+  flex: none; 
   background: white;
   transition: transform 0.3s ease;
 }
 
 .service-image-fixed {
   width: 340px;
-  height: 340px; /* Fixed square to unify different source images */
+  height: 340px; 
   overflow: hidden;
 }
 
 .service-image-fixed img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Crops image to fit the square exactly */
+  object-fit: cover; 
 }
 
 .service-content-fixed {
@@ -498,20 +486,19 @@ h1, h2, h3 {
   color: #666;
 }
 
-/* Hover effect consistent with luxury feel */
 .service-card:hover {
   transform: translateY(-5px);
 }
-/* --- Photo Gallery Section (Fixed Size) --- */
+
 .gallery-section {
   padding: 100px 0;
-  background-color: #161616; /* Dark background to make photos pop, matching your bio */
+  background-color: #161616; 
   color: white;
   min-width: 1100px;
 }
 
 .gallery-container {
-  width: 1100px; /* Locked width */
+  width: 1100px; 
   margin: 0 auto;
 }
 
@@ -536,9 +523,9 @@ text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Main Display Box */
+
 .gallery-viewer {
-  position: relative; /* Essential for absolute positioning of buttons */
+  position: relative; 
   width: 1100px;
   height: 550px;
   margin-bottom: 15px;
@@ -548,10 +535,10 @@ text-transform: uppercase;
 .gallery-viewer img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the high-end photos fill the frame perfectly */
+  object-fit: cover; 
 }
 
-/* Thumbnail Strip - Fixed Sizing */
+
 .thumbnail-strip {
   display: flex;
   justify-content: center;
@@ -560,7 +547,7 @@ text-transform: uppercase;
 }
 
 .thumb {
-  width: 100px; /* Fixed square thumbnails */
+  width: 100px; 
   height: 65px;
   object-fit: cover;
   cursor: pointer;
@@ -600,7 +587,6 @@ text-transform: uppercase;
   border: 2px solid var(--gold);
   opacity: 1;
 }
-/* --- Search Listings Section (Fixed Size) --- */
 .search-section {
   width: 100%;
   min-width: 1100px;
@@ -608,14 +594,13 @@ text-transform: uppercase;
 }
 
 .search-bg-container {
-  height: 500px; /* Restored height to give the text room to breathe */
+  height: 500px; 
   background: url('https://img1.wsimg.com/isteam/stock/143/:/rs=w:1279,m') no-repeat center center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Removed padding-bottom to keep text centered */
 }
 
 .search-overlay-text {
@@ -623,23 +608,20 @@ text-transform: uppercase;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 1.2rem;
-  /* Ensure text sits above the card naturally */
   margin-bottom: 20px; 
   text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   z-index: 1;
 }
 
-/* Fixed Card Logic */
 .search-card {
   width: 1100px;
   background: white;
   padding: 40px 60px;
   box-shadow: 0 15px 45px rgba(0,0,0,0.1);
-  /* FIX: Use margin-top instead of bottom: -60px */
   margin: -80px auto 0; 
   position: relative;
   z-index: 10;
-  box-sizing: border-box; /* Ensures padding doesn't break the 1100px width */
+  box-sizing: border-box; 
 }
 .search-title {
   font-family: 'Playfair Display', serif;
@@ -649,7 +631,6 @@ text-transform: uppercase;
   margin-bottom: 30px;
 }
 
-/* Form Layout */
 .search-form {
   display: flex;
   flex-direction: column;
@@ -669,7 +650,7 @@ text-transform: uppercase;
 }
 
 .form-group.small {
-  flex: 0 0 150px; /* Fixed smaller width for numbers/prices */
+  flex: 0 0 150px; 
 }
 
 .form-group label {
@@ -697,7 +678,7 @@ text-transform: uppercase;
 .search-btn {
   width: 100%;
   padding: 12px;
-  background: #f0f0f0; /* Matches neutral button in image_c66fcf */
+  background: #f0f0f0; 
   color: #333;
   border: none;
   text-transform: uppercase;
@@ -712,16 +693,13 @@ text-transform: uppercase;
   color: white;
 }
 
-/* --- Sponsors Section (Ref: image_e31f4a.png) --- */
 .sponsors {
     margin-top: 100px; 
-    padding: 50px 0; /* Slightly tighter padding for a modern look */
+    padding: 50px 0; 
     background-color: #ffffff;
     
-    /* ADDED FOR DISTINCTION */
     position: relative;
     z-index: 5;
-    /* Soft, wide shadow to lift the section */
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.03), 0 10px 30px rgba(0, 0, 0, 0.03); 
     border-top: 1px solid #f0f0f0;
     border-bottom: 1px solid #f0f0f0;
@@ -732,26 +710,25 @@ text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px; /* Increased gap for a more expansive luxury feel */
+    gap: 100px;
 }
 
 .sponsor-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.8; /* Mutes logos slightly for a professional look */
+    opacity: 0.8; 
     transition: opacity 0.3s ease;
 }
 
 .sponsor-logo:hover {
-    opacity: 1; /* Brightens logo on hover */
+    opacity: 1; 
 }
 
 .sponsor-logo img {
-    max-height: 80px; /* Limits size to keep them uniform */
+    max-height: 80px; 
     width: auto;
 }
-/* --- Contact Us Revamp --- */
 .contact-us {
     padding: 100px 0;
     background-color: #ffffff;
@@ -781,7 +758,6 @@ text-transform: uppercase;
     gap: 100px;
 }
 
-/* Form Styling */
 .contact-form-wrapper {
     flex: 1.2;
 }
@@ -810,7 +786,7 @@ text-transform: uppercase;
     width: 100%;
     padding: 15px 0;
     border: none;
-    border-bottom: 1px solid #e0e0e0; /* Minimalist bottom line only */
+    border-bottom: 1px solid #e0e0e0; 
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     outline: none;
@@ -838,7 +814,6 @@ text-transform: uppercase;
     color: white;
 }
 
-/* Details Styling */
 .contact-details {
     flex: 1;
 }
@@ -846,7 +821,7 @@ text-transform: uppercase;
 .whatsapp-btn {
     display: inline-flex;
     align-items: center;
-    background: #4a5d63; /* Muted slate from reference */
+    background: #4a5d63; 
     color: white;
     padding: 12px 25px;
     border-radius: 50px;
@@ -877,7 +852,6 @@ text-transform: uppercase;
     font-weight: bold;
 }
 
-/* --- Location Section Styling --- */
 .location-compact {
     padding: 80px 0;
     background-color: #fff;
@@ -928,7 +902,6 @@ text-transform: uppercase;
     min-width: 1100px;
 }
 
-/* The Triangle Notch (Ref: image_166d4b.png) */
 .footer-notch {
     position: absolute;
     top: 0;
@@ -938,7 +911,7 @@ text-transform: uppercase;
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid #fff; /* Cuts into the black footer from the white map section */
+    border-top: 20px solid #fff; 
 }
 
 .footer-container {
@@ -950,7 +923,6 @@ text-transform: uppercase;
     gap: 30px;
 }
 
-/* Social Icons Styling */
 .footer-socials {
     display: flex;
     gap: 25px;
@@ -964,10 +936,9 @@ text-transform: uppercase;
 }
 
 .footer-socials a:hover {
-    color: var(--gold); /* Subtle brand interaction */
+    color: var(--gold); 
 }
 
-/* Copyright Styling (Ref: image_166d4b.png) */
 .footer-copyright p {
     font-family: 'Poppins', sans-serif;
     font-size: 0.75rem;
@@ -976,7 +947,6 @@ text-transform: uppercase;
     text-transform: uppercase;
 }
 
-/* Minimalist Bottom Accent */
 .footer-bottom-line {
     width: 40px;
     height: 1px;
