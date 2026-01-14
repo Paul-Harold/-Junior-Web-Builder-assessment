@@ -514,6 +514,7 @@ h1, h2, h3 {
 
 .gallery-container {
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .gallery-header {
@@ -1075,58 +1076,4 @@ text-transform: uppercase;
         width: 95%;
     }
 }
-@media (max-width: 768px) {
-    
-    .gallery-section {
-        padding-bottom: 20px !important; 
-    }
 
-   
-    .search-bg-container {
-        height: 300px; 
-    }
-
-    .search-card {
-        margin-top: -30px !important;
-        width: 100%;
-        position: relative;
-        z-index: 10;
-    }
-
-   
-    .gallery-viewer {
-        height: auto;
-        aspect-ratio: 4 / 3; 
-        max-height: 300px;
-    }
-}
-@media (max-width: 768px) {
-    
-    .search-section {
-        margin-top: -120px !important; 
-        z-index: 20;
-    }
-
-   
-    .search-bg-container {
-        height: 200px !important; 
-    }
-
-   
-    .gallery-section {
-        padding-bottom: 0 !important;
-    }
-
-
-    .search-card {
-        width: 95% !important; 
-        margin: 0 auto !important;
-        padding: 30px 20px !important;
-        transform: translateY(0); 
-    }
-
-   
-    .gallery-header {
-        margin-bottom: 15px !important;
-    }
-}
