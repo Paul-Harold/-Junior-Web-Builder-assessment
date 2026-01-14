@@ -1076,3 +1076,28 @@ text-transform: uppercase;
         width: 95%;
     }
 }
+@media (max-width: 768px) {
+    /* 1. Reduce the Gallery Section padding */
+    .gallery-section {
+        padding-bottom: 20px !important; /* Pulls the next section up */
+    }
+
+    /* 2. Adjust the Search Section spacing */
+    .search-bg-container {
+        height: 300px; /* Shrink the background height on mobile */
+    }
+
+    .search-card {
+        margin-top: -30px !important; /* Small overlap looks better on mobile */
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* 3. Fix the Gallery viewer height (the likely culprit) */
+    .gallery-viewer {
+        height: auto;
+        aspect-ratio: 4 / 3; /* Makes height responsive to width */
+        max-height: 300px;
+    }
+}
