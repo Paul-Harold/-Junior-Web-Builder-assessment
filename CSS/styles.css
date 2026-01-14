@@ -303,11 +303,12 @@ h1, h2, h3 {
 .value-proposition {
   padding: 80px 0;
   background-color: #f9f9f9;
-  min-width: 1100px; 
+  width: 100%;
 }
 
 .vp-container {
-  width: 1100px; 
+ width: 90%; 
+  max-width: 1100px; 
   margin: 0 auto;
 }
 
@@ -705,8 +706,9 @@ text-transform: uppercase;
     border-bottom: 1px solid #f0f0f0;
 }
 .sponsors-container {
-    width: 1100px;
-    margin: 0 auto;
+    width: 90%;          
+    max-width: 1100px;   
+    margin: 0 auto;     
     display: flex;
     justify-content: center;
     align-items: center;
@@ -732,11 +734,12 @@ text-transform: uppercase;
 .contact-us {
     padding: 100px 0;
     background-color: #ffffff;
-    min-width: 1100px;
+    width: 100%;
 }
 
 .contact-container {
-    width: 1100px;
+    width: 90%;          
+    max-width: 1100px;  
     margin: 0 auto;
 }
 
@@ -952,4 +955,74 @@ text-transform: uppercase;
     height: 1px;
     background-color: #333;
     margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh; 
+        background-attachment: scroll; 
+    }
+
+    .hero-content {
+        transform: translateY(0); 
+        padding: 0 20px; 
+    }
+
+    .hero-title {
+        font-size: 2.2rem; 
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+    }
+
+   
+    .hero::before, .navbar::after {
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid white;
+    }
+}
+@media (max-width: 768px) {
+    .vp-row, .vp-row.vp-reverse {
+        flex-direction: column; 
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .vp-image-wrapper {
+        width: 100%; 
+        height: 250px; 
+    }
+
+    .vp-content-card {
+        width: 100%; 
+        margin-left: 0 !important; 
+        margin-right: 0 !important; 
+        padding: 30px 20px; 
+        box-shadow: none; 
+        text-align: center;
+    }
+
+    .vp-main-title {
+        font-size: 1.4rem;
+        padding: 0 15px;
+    }
+
+    .vp-content-card h3 {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        min-width: 100%;
+        padding: 40px 20px; 
+        box-sizing: border-box;
+    }
+    
+    .Logo img {
+        height: 80px; 
+    }
 }
