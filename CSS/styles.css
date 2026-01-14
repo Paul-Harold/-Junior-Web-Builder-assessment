@@ -303,12 +303,11 @@ h1, h2, h3 {
 .value-proposition {
   padding: 80px 0;
   background-color: #f9f9f9;
-  width: 100%;
+  min-width: 1100px; 
 }
 
 .vp-container {
- width: 90%; 
-  max-width: 1100px; 
+  width: 1100px; 
   margin: 0 auto;
 }
 
@@ -706,9 +705,8 @@ text-transform: uppercase;
     border-bottom: 1px solid #f0f0f0;
 }
 .sponsors-container {
-    width: 90%;          
-    max-width: 1100px;   
-    margin: 0 auto;     
+    width: 1100px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -734,12 +732,11 @@ text-transform: uppercase;
 .contact-us {
     padding: 100px 0;
     background-color: #ffffff;
-    width: 100%;
+    min-width: 1100px;
 }
 
 .contact-container {
-    width: 90%;          
-    max-width: 1100px;  
+    width: 1100px;
     margin: 0 auto;
 }
 
@@ -955,34 +952,6 @@ text-transform: uppercase;
     height: 1px;
     background-color: #333;
     margin-top: 10px;
-}
-@media (max-width: 768px) {
-    .hero {
-        height: 80vh; 
-        background-attachment: scroll; 
-    }
-
-    .hero-content {
-        transform: translateY(0); 
-        padding: 0 20px; 
-    }
-
-    .hero-title {
-        font-size: 2.2rem; 
-        line-height: 1.2;
-    }
-
-    .hero-subtitle {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-    }
-
-   
-    .hero::before, .navbar::after {
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-top: 15px solid white;
-    }
 }
 @media (max-width: 768px) {
     /* 1. Global Width Resets */
