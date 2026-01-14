@@ -133,7 +133,8 @@ h1, h2, h3 {
 }
 .hero {
     width: 100%;
-    height: 700px;
+    height: auto;
+    min-height: 700px;
     position: relative;
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
@@ -953,34 +954,42 @@ text-transform: uppercase;
     background-color: #333;
     margin-top: 10px;
 }
+.hero {
+    width: 100%;
+    height: auto;         /* Allow it to grow with content on mobile */
+    min-height: 600px;
+    padding: 60px 0;
+    background-attachment: scroll; /* Fixed backgrounds often break on mobile */
+}
+
+.hero-title {
+    font-size: clamp(2rem, 10vw, 4.5rem); /* Shrinks font automatically */
+    width: 90%;
+    margin: 0 auto;
+}
 @media (max-width: 768px) {
-    .hero {
-        height: 80vh; 
-        background-attachment: scroll; 
+    .bio-container {
+        flex-direction: column; /* Stacks image on top of text */
+        gap: 30px;
+        text-align: center;
     }
 
-    .hero-content {
-        transform: translateY(0); 
-        padding: 0 20px; 
+    .bio-image {
+        flex: 0 0 auto;
+        width: 80%;           /* Scale image down so it doesn't hit edges */
+        margin: 0 auto;
     }
 
-    .hero-title {
-        font-size: 2.2rem; 
-        line-height: 1.2;
+    .bio-image::after {
+        display: none;        /* Hide the gold decorative box on mobile to save space */
     }
 
-    .hero-subtitle {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-    }
-
-   
-    .hero::before, .navbar::after {
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-top: 15px solid white;
+    .bio-content h2 {
+        font-size: 2.2rem;
     }
 }
+
+
 @media (max-width: 768px) {
     .vp-row, .vp-row.vp-reverse {
         flex-direction: column; 
@@ -1013,13 +1022,18 @@ text-transform: uppercase;
 }
 @media (max-width: 768px) {
     .navbar {
-        width: 100%;
-        min-width: 100%;
-        padding: 40px 20px; 
-        box-sizing: border-box;
+        padding: 20px 0;
+        min-width: 0;
+        width: 90%;
     }
-    
+
+    .Logo {
+        position: static;     /* Remove absolute positioning on mobile */
+        transform: none;
+        left: auto;
+    }
+
     .Logo img {
-        height: 80px; 
+        height: 70px;         /* Smaller logo for mobile */
     }
 }
