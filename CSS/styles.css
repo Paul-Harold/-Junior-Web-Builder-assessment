@@ -12,6 +12,27 @@ h1, h2, h3 {
   --gold: #c5a059;
   --dark: #1a1a1a;
 }
+.navbar, 
+.bio-container, 
+.vp-container, 
+.services-container, 
+.gallery-container, 
+.search-card, 
+.sponsors-container, 
+.contact-container, 
+.footer-container {
+    width: 90%;            
+    max-width: 1100px;     
+    margin: 0 auto;       
+    min-width: auto;       
+}
+
+.realtor-bio, .services, .gallery-section, .search-section, 
+.contact-us, .location-compact, .main-footer {
+    min-width: auto;
+    width: 100%;
+}
+
 
 .navbar {
     width: 1100px;
@@ -22,7 +43,6 @@ h1, h2, h3 {
     padding: 80px 0; 
     position: relative;
     background: #fff;
-    min-width: 1100px; 
 }
 .hamburger {
     cursor: pointer;
@@ -213,7 +233,6 @@ h1, h2, h3 {
     padding: 120px 0;
     background-color: #161616; 
     color: white;
-    min-width: 1100px;
 }
 
 .bio-container {
@@ -303,7 +322,6 @@ h1, h2, h3 {
 .value-proposition {
   padding: 80px 0;
   background-color: #f9f9f9;
-  min-width: 1100px; 
 }
 
 .vp-container {
@@ -331,12 +349,11 @@ h1, h2, h3 {
 }
 
 .vp-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
-  width: 1100px;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    width: 100%; 
 }
 
 .vp-row.vp-reverse {
@@ -345,10 +362,9 @@ h1, h2, h3 {
 
 
 .vp-image-wrapper {
-  width: 660px; 
-  height: 440px;
-  flex: none; 
-  overflow: hidden;
+    width: 60%;  
+    height: 400px;
+    flex: none;
 }
 
 .vp-image-wrapper img {
@@ -363,14 +379,12 @@ h1, h2, h3 {
 }
 
 .vp-content-card {
-  width: 440px; 
-  flex: none; 
-  background: white;
-  padding: 60px;
-  margin-left: -100px; 
-  z-index: 2;
-  box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
-  box-sizing: border-box;
+    width: 40%; /* Responsive percentage */
+    min-width: 320px;
+    background: white;
+    padding: 40px;
+    margin-left: -100px; 
+    z-index: 2;
 }
 
 .vp-row.vp-reverse .vp-content-card {
@@ -414,7 +428,6 @@ h1, h2, h3 {
 .services {
   padding: 100px 0;
   background-color: #ffffff;
-  min-width: 1100px; 
 }
 
 .services-container {
@@ -443,22 +456,19 @@ h1, h2, h3 {
 }
 
 .services-grid {
-  display: flex;
-  justify-content: space-between;
-  width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Changed from 1100px */
+    gap: 20px;
 }
 
 .service-card {
-  width: 340px; 
-  flex: none; 
-  background: white;
-  transition: transform 0.3s ease;
+    width: 31%; /* Allows 3 to sit side-by-side on desktop */
 }
 
 .service-image-fixed {
-  width: 340px;
-  height: 340px; 
-  overflow: hidden;
+    width: 100%;
+    height: 300px;
 }
 
 .service-image-fixed img {
@@ -490,11 +500,11 @@ h1, h2, h3 {
   transform: translateY(-5px);
 }
 
+
 .gallery-section {
   padding: 100px 0;
   background-color: #161616; 
   color: white;
-  min-width: 1100px;
 }
 
 .gallery-container {
@@ -589,7 +599,6 @@ text-transform: uppercase;
 }
 .search-section {
   width: 100%;
-  min-width: 1100px;
   position: relative;
 }
 
@@ -732,7 +741,6 @@ text-transform: uppercase;
 .contact-us {
     padding: 100px 0;
     background-color: #ffffff;
-    min-width: 1100px;
 }
 
 .contact-container {
@@ -858,7 +866,6 @@ text-transform: uppercase;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 1100px;
 }
 
 .location-header {
@@ -899,7 +906,6 @@ text-transform: uppercase;
     color: #ffffff;
     padding: 60px 0 40px 0;
     position: relative;
-    min-width: 1100px;
 }
 
 .footer-notch {
@@ -954,117 +960,60 @@ text-transform: uppercase;
     margin-top: 10px;
 }
 @media (max-width: 768px) {
-    /* 1. Global Width Resets */
-    .navbar, .realtor-bio, .services, .gallery-section, 
-    .search-section, .location-compact, .main-footer {
-        min-width: 100% !important;
-        width: 100% !important;
-        overflow-x: hidden;
-    }
+    /* Hero Reset */
+    .hero-title { font-size: 2rem; }
+    .hero-content { transform: translateY(0); }
+    .hero { background-attachment: scroll; height: 70vh; }
 
-    /* 2. Navbar & Logo */
-    .navbar {
-        padding: 40px 20px;
-        box-sizing: border-box;
-    }
-    .Logo img {
-        height: 80px; /* Smaller logo for mobile */
-    }
-
-    /* 3. Hero Section (Already fixed, but ensuring title spacing) */
-    .hero {
-        height: 70vh;
-        background-attachment: scroll;
-    }
-    .hero-title {
-        font-size: 2rem !important;
-        padding: 0 10px;
-    }
-
-    /* 4. Realtor Bio - Stack Image and Text */
-    .bio-container {
+    /* Stacking Logic - This fixes the 'Halfed' look */
+    .bio-container, 
+    .vp-row, 
+    .vp-row.vp-reverse, 
+    .services-grid, 
+    .contact-grid, 
+    .form-row {
+        flex-direction: column !important;
         width: 100%;
-        flex-direction: column;
-        gap: 50px;
-        padding: 0 20px;
-        box-sizing: border-box;
+        gap: 30px;
     }
-    .bio-image {
-        flex: 0 0 auto;
-        width: 80%; /* Portrait looks better slightly smaller on mobile */
-    }
-    .bio-content {
+
+    /* Remove the 'Overlap' on Value Proposition */
+    .vp-content-card, 
+    .vp-row.vp-reverse .vp-content-card {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 30px 20px;
         text-align: center;
     }
-    .bio-content h2 { font-size: 2.2rem; }
-    .bio-phone { font-size: 1.5rem; }
 
-    /* 5. Value Proposition - Kill the -100px Overlap */
-    .vp-row, .vp-row.vp-reverse {
-        flex-direction: column;
-        width: 100%;
-        margin-bottom: 30px;
-    }
     .vp-image-wrapper {
         width: 100%;
         height: 250px;
     }
-    .vp-content-card {
-        width: 100% !important;
-        margin: 0 !important; /* Removes the -100px overlap */
-        padding: 40px 20px;
-        text-align: center;
-        box-shadow: none;
-    }
 
-    /* 6. Services Grid - Stack the 3 cards */
-    .services-container, .services-grid {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-    .service-card, .service-image-fixed {
-        width: 100%;
-        max-width: 340px;
-    }
-
-    /* 7. Gallery - Resize viewer */
-    .gallery-container, .gallery-viewer, .thumbnail-strip {
+    /* Services & Bio Adjustments */
+    .service-card, .bio-image {
         width: 100%;
     }
-    .gallery-viewer { height: 300px; }
-    .thumb { width: 60px; height: 40px; }
+    
+    .bio-image::after { display: none; } /* Border looks messy on small screens */
 
-    /* 8. Search Card - Remove negative margin */
+    /* Search Card Reset */
     .search-card {
-        width: 95%;
-        margin: -40px auto 0;
-        padding: 30px 20px;
+        margin-top: -30px;
+        padding: 20px;
     }
-    .form-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .form-group.small { flex: 1; }
 
-    /* 9. Sponsors - Smaller icons */
+    /* Gallery Adjustments */
+    .gallery-viewer { height: 250px; width: 100%; }
+    .thumbnail-strip { width: 100%; flex-wrap: wrap; }
+    
+    /* Sponsors */
     .sponsors-container {
-        gap: 30px;
+        gap: 40px;
         flex-wrap: wrap;
-        padding: 0 20px;
     }
-    .sponsor-logo img { max-height: 40px; }
-
-    /* 10. Contact Us - Stacking */
-    .contact-grid {
-        flex-direction: column;
-        gap: 50px;
-        padding: 0 20px;
-    }
-    .contact-main-title { font-size: 1.8rem; }
-
-    /* 11. Map & Footer */
-    .map-wrapper { width: 95%; height: 250px; }
-    .footer-container { width: 100%; }
+    
+    /* Footer & Map */
+    .footer-container, .map-wrapper { width: 100%; }
 }
