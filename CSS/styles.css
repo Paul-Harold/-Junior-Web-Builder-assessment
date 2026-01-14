@@ -518,7 +518,6 @@ h1, h2, h3 {
 
 .gallery-header {
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .gallery-subtitle {
@@ -960,18 +959,18 @@ text-transform: uppercase;
     margin-top: 10px;
 }
 @media (max-width: 768px) {
-    /* Stack elements vertically */
+    
     .bio-container, .vp-row, .vp-row.vp-reverse, .contact-grid {
         flex-direction: column;
         text-align: center;
     }
 
-    /* Remove the "Gold Box" decoration on mobile to prevent overflow */
+  
     .bio-image::after { display: none; }
 
-    /* Fix Value Proposition cards on mobile */
+    
     .vp-content-card {
-        margin: -40px 0 0 0 !important; /* Overlap vertically instead of horizontally */
+        margin: -40px 0 0 0 !important; 
         width: 100%;
     }
 
@@ -980,7 +979,7 @@ text-transform: uppercase;
         height: 300px;
     }
 
-    /* Search Card Adjustments */
+   
     .search-card {
         padding: 30px 20px;
     }
@@ -991,7 +990,7 @@ text-transform: uppercase;
         flex: 1;
     }
 
-    /* Sponsors Section */
+   
     .sponsors-container {
         flex-wrap: wrap;
         gap: 40px;
@@ -999,27 +998,27 @@ text-transform: uppercase;
 }
 @media (max-width: 768px) {
     .vp-row, .vp-row.vp-reverse {
-        flex-direction: column; /* Stack image and text */
+        flex-direction: column;
     }
 
     .vp-content-card {
-        margin-left: 0 !important;   /* Kill the horizontal overlap */
+        margin-left: 0 !important;   
         margin-right: 0 !important;
-        margin-top: -50px !important; /* Overlap vertically instead */
+        margin-top: -50px !important; 
         width: 100%;
     }
 }
-/* --- UNIVERSAL MOBILE OVERRIDE --- */
+
 @media (max-width: 768px) {
-    /* 1. Kill the Horizontal Scroll */
+    
     body, html {
         overflow-x: hidden !important;
         position: relative;
     }
 
-    /* 2. Fix the Services Section (The Culprit) */
+    
     .services-grid {
-        flex-direction: column; /* Stack cards vertically */
+        flex-direction: column; 
         align-items: center;
         gap: 40px;
     }
@@ -1028,33 +1027,33 @@ text-transform: uppercase;
     .service-image-fixed {
         width: 100% !important;
         max-width: 100%;
-        height: auto; /* Let height be natural */
+        height: auto; 
     }
 
-    /* 3. Fix the Gallery (The "Mess") */
+    
     .gallery-viewer {
-        height: 250px; /* Much smaller height for phone screens */
+        height: 250px; 
         margin-bottom: 10px;
     }
 
     .thumbnail-strip {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 thumbnails per row */
+        grid-template-columns: repeat(4, 1fr); 
         gap: 5px;
         width: 100%;
     }
 
     .thumb {
-        width: 100% !important; /* Thumbnails grow to fill their grid spot */
+        width: 100% !important;
         height: 50px;
     }
 
     .nav-btn {
         padding: 10px 5px;
-        font-size: 1.2rem; /* Shrink arrows so they don't block the view */
+        font-size: 1.2rem;
     }
 
-    /* 4. Fix Value Proposition Stacking */
+    
     .vp-row, .vp-row.vp-reverse {
         flex-direction: column !important;
     }
@@ -1066,29 +1065,29 @@ text-transform: uppercase;
 
     .vp-content-card {
         width: 100% !important;
-        margin: -30px 0 0 0 !important; /* Stack vertically with small overlap */
+        margin: -30px 0 0 0 !important; 
         padding: 30px 20px;
     }
 
     /* 5. Fix Hero Title */
     .hero-title {
-        font-size: 2.2rem !important; /* Shrink the giant text */
+        font-size: 2.2rem !important; 
         width: 95%;
     }
 }
 @media (max-width: 768px) {
-    /* 1. Reduce the Gallery Section padding */
+    
     .gallery-section {
-        padding-bottom: 20px !important; /* Pulls the next section up */
+        padding-bottom: 20px !important; 
     }
 
-    /* 2. Adjust the Search Section spacing */
+   
     .search-bg-container {
-        height: 300px; /* Shrink the background height on mobile */
+        height: 300px; 
     }
 
     .search-card {
-        margin-top: -30px !important; /* Small overlap looks better on mobile */
+        margin-top: -30px !important;
         width: 100%;
         position: relative;
         z-index: 10;
