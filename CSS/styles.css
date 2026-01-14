@@ -985,44 +985,117 @@ text-transform: uppercase;
     }
 }
 @media (max-width: 768px) {
-    .vp-row, .vp-row.vp-reverse {
-        flex-direction: column; 
-        width: 100%;
-        margin-bottom: 40px;
+    /* 1. Global Width Resets */
+    .navbar, .realtor-bio, .services, .gallery-section, 
+    .search-section, .location-compact, .main-footer {
+        min-width: 100% !important;
+        width: 100% !important;
+        overflow-x: hidden;
     }
 
-    .vp-image-wrapper {
-        width: 100%; 
-        height: 250px; 
-    }
-
-    .vp-content-card {
-        width: 100%; 
-        margin-left: 0 !important; 
-        margin-right: 0 !important; 
-        padding: 30px 20px; 
-        box-shadow: none; 
-        text-align: center;
-    }
-
-    .vp-main-title {
-        font-size: 1.4rem;
-        padding: 0 15px;
-    }
-
-    .vp-content-card h3 {
-        font-size: 1.5rem;
-    }
-}
-@media (max-width: 768px) {
+    /* 2. Navbar & Logo */
     .navbar {
-        width: 100%;
-        min-width: 100%;
-        padding: 40px 20px; 
+        padding: 40px 20px;
         box-sizing: border-box;
     }
-    
     .Logo img {
-        height: 80px; 
+        height: 80px; /* Smaller logo for mobile */
     }
+
+    /* 3. Hero Section (Already fixed, but ensuring title spacing) */
+    .hero {
+        height: 70vh;
+        background-attachment: scroll;
+    }
+    .hero-title {
+        font-size: 2rem !important;
+        padding: 0 10px;
+    }
+
+    /* 4. Realtor Bio - Stack Image and Text */
+    .bio-container {
+        width: 100%;
+        flex-direction: column;
+        gap: 50px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .bio-image {
+        flex: 0 0 auto;
+        width: 80%; /* Portrait looks better slightly smaller on mobile */
+    }
+    .bio-content {
+        text-align: center;
+    }
+    .bio-content h2 { font-size: 2.2rem; }
+    .bio-phone { font-size: 1.5rem; }
+
+    /* 5. Value Proposition - Kill the -100px Overlap */
+    .vp-row, .vp-row.vp-reverse {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .vp-image-wrapper {
+        width: 100%;
+        height: 250px;
+    }
+    .vp-content-card {
+        width: 100% !important;
+        margin: 0 !important; /* Removes the -100px overlap */
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: none;
+    }
+
+    /* 6. Services Grid - Stack the 3 cards */
+    .services-container, .services-grid {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .service-card, .service-image-fixed {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    /* 7. Gallery - Resize viewer */
+    .gallery-container, .gallery-viewer, .thumbnail-strip {
+        width: 100%;
+    }
+    .gallery-viewer { height: 300px; }
+    .thumb { width: 60px; height: 40px; }
+
+    /* 8. Search Card - Remove negative margin */
+    .search-card {
+        width: 95%;
+        margin: -40px auto 0;
+        padding: 30px 20px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .form-group.small { flex: 1; }
+
+    /* 9. Sponsors - Smaller icons */
+    .sponsors-container {
+        gap: 30px;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .sponsor-logo img { max-height: 40px; }
+
+    /* 10. Contact Us - Stacking */
+    .contact-grid {
+        flex-direction: column;
+        gap: 50px;
+        padding: 0 20px;
+    }
+    .contact-main-title { font-size: 1.8rem; }
+
+    /* 11. Map & Footer */
+    .map-wrapper { width: 95%; height: 250px; }
+    .footer-container { width: 100%; }
 }
