@@ -9,34 +9,48 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-          <div class="Logo">
-            <img src="/images/logo.webp">
-          </div>
-          <div class="hamburger" id="hamburger">☰</div>
-          <ul class="nav-links" id="navLink s">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">☰</div>
+        
+        <div class="Logo">
+            <img src="images/logo.webp" alt="Marci Metzger Homes Logo">
+        </div>
+        
+        <div class="sidebar" id="sidebar">
+            <div class="close-btn" id="closeBtn">&times;</div>
+            <ul class="nav-links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">LISTINGS</a></li>
+                <li><a href="#">LET'S MOVE</a></li>
+                <li><a href="#">ABOUT US</a></li>
+            </ul>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </nav>
+</header>
 
     <main>
-      <section class="hero">
-        <img src="/images/hero.webp">
-        <h1>Pahrump Realtor</h1>
-        <h2>MARCI METZGER - THE RIDGE REALTY GROUP</h2>
-        <button>CALL NOW</button>
-      </section>
+     <section class="hero">
+    <div class="hero-content">
+        <p class="hero-subtitle">MARCI METZGER - THE RIDGE REALTY GROUP</p>
+        <h1 class="hero-title">Pahrump Realtor</h1>
+        <button class="hero-btn">CALL NOW</button>
+    </div>
+</section>
 
-      <section class="realtor-bio">
-        <h2>MARCI METZGER</h2>
-        <img src="/images/Bio.webp">
-        <h3>REALTOR FOR NEARLY 3 DECADES!</h3>
-        <h4>206-919-6886</h4>
-      </section>
+     <section class="realtor-bio">
+    <div class="bio-container">
+        <div class="bio-image">
+            <img src="images/Bio.webp" alt="Marci Metzger">
+        </div>
+        <div class="bio-content">
+            <h2>MARCI METZGER</h2>
+            <div class="bio-divider"></div>
+            <h3>REALTOR FOR NEARLY 3 DECADES</h3>
+            <a href="tel:2069196886" class="bio-phone">206.919.6886</a>
+        </div>
+    </div>
+</section>
             
       <section class="value-proposition">
   <div class="vp-container">
@@ -67,7 +81,7 @@
       </div>
     </div>
     <div class="vp-row">
-      <div class="vp-image-wrapper">
+      <div class="vp-image-wrapper flip-image">
         <img src="images/guide.webp" alt="Real Estate Professionalism">
       </div>
       <div class="vp-content-card">

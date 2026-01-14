@@ -16,57 +16,298 @@ h1, h2, h3 {
 
 /* --- Header / Navbar (Centered Logo Revamp) --- */
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0; 
+    position: relative;
+    background: #fff;
+    min-width: 1100px; /* Keeps layout stable */
+}
+.hamburger {
+    cursor: pointer;
+    font-size: 1.5rem;
+    /* Add a little z-index to ensure it's always clickable above the logo area */
+    z-index: 10;
+    color: #333;
 }
 
 .Logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
 }
-
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Positions it right at the start of the Hero */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #fff; /* Matches navbar color */
+    z-index: 10;
+}
 .Logo img {
-  height: 50px;
-  display: block;
+    height: 135px; /* Adjusted to balance with the 80px padding */
+    width: auto;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Moves it completely out of view */
+    width: 300px;
+    height: 100%;
+    background: white;
+    transition: transform 0.3s ease, visibility 0.3s; /* Smooth transition */
+    visibility: hidden; /* Hides the X button and content entirely */
+    z-index: 2000;
+    padding: 60px 40px;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+}
+.sidebar.active {
+    left: 0;
+    visibility: visible; /* Shows everything when hamburger is clicked */
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    padding: 0;
+}
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 25px 0;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: var(--dark);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    font-family: Arial, sans-serif; /* Clean look for the X */
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1500;
 }
 
-.hamburger {
-  cursor: pointer;
-  font-size: 1.5rem;
+.overlay.active {
+    display: block;
+}
+.hero {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    /* FIX: background-image only takes the URL */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+        url('https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/mtn%20falls%20pond.jpg/:/rs=w:2000,m');
+    /* These handle the sizing and sticky effect correctly */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    
+    /* Centering logic for text and button */
+    display: flex;
+    flex-direction: column; /* Stacks text above button */
+    align-items: center;    
+    justify-content: center; 
+    color: white;
+    text-align: center;
+}
+.hero h1 {
+    font-family: 'Playfair Display', serif; /* Import this via Google Fonts */
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin: 10px 0 20px 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+.hero p {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.hero-arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid white; /* Matches the white navbar above */
+    z-index: 5;
+}
+.hero-content {
+    text-align: center;
+    z-index: 5;
+    /* Subtle text shadow helps readability against light mountain peaks */
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.4); 
+    transform: translateY(180px);
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid white;
+    z-index: 10;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+.hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+.hero-btn {
+    background: white;
+    color: #1a1a1a;
+    padding: 14px 40px;
+    border-radius: 50px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hero-btn:hover {
+    background: var(--gold);
+    color: white;
 }
 
 /* --- Realtor Bio --- */
 .realtor-bio {
-  padding: 80px 0;
-  background-color: #161616;
-  color: white;
-  text-align: center;
+    padding: 120px 0;
+    background-color: #161616; /* Deep charcoal/black */
+    color: white;
+    min-width: 1100px;
 }
 
+.bio-container {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px; /* Large gap for a spacious, luxury feel */
+}
+
+/* Image Container with Framing */
+.bio-image {
+    position: relative;
+    flex: 0 0 400px; /* Fixed width for the portrait */
+}
+
+.bio-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+    filter: grayscale(10%); /* Optional: subtle desaturation for a "classic" look */
+}
+
+/* The Gold Frame behind the image */
+.bio-image::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--gold);
+    z-index: 1;
+}
+
+/* Text Styling */
+.bio-content {
+    flex: 1;
+}
+
+.bio-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.bio-divider {
+    width: 80px;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 25px 0;
+}
+
+.bio-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: #a0a0a0; /* Muted gray for the sub-info */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.bio-phone {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    padding-bottom: 5px;
+    transition: 0.3s ease;
+}
+
+.bio-phone:hover {
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+}
+.flip-image{
+  transform: scaleX(-1);
+}
 
 .value-proposition {
   padding: 80px 0;

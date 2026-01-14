@@ -59,3 +59,17 @@ thumbnails.forEach((thumb, index) => {
 
 // Initialize the timer on page load
 startAutoPlay();
+
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const closeBtn = document.getElementById('closeBtn');
+const overlay = document.getElementById('overlay');
+
+function toggleMenu() {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+hamburger.addEventListener('click', toggleMenu);
+closeBtn.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
