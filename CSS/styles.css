@@ -1,0 +1,469 @@
+/* --- Global Styles --- */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --gold: #c5a059;
+  --dark: #1a1a1a;
+}
+
+/* --- Header / Navbar (Centered Logo Revamp) --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.Logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Logo img {
+  height: 50px;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.hamburger {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* --- Realtor Bio --- */
+.realtor-bio {
+  padding: 80px 0;
+  background-color: #161616;
+  color: white;
+  text-align: center;
+}
+
+
+.value-proposition {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  min-width: 1100px; 
+}
+
+.vp-container {
+  width: 1100px; 
+  margin: 0 auto;
+}
+
+.vp-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.vp-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.vp-main-title {
+  font-size: 1.5em;
+  letter-spacing: 4px;
+}
+
+.vp-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  width: 1100px;
+  flex-shrink: 0;
+}
+
+.vp-row.vp-reverse {
+  flex-direction: row-reverse;
+}
+
+
+.vp-image-wrapper {
+  width: 660px; 
+  height: 440px;
+  flex: none; 
+  overflow: hidden;
+}
+
+.vp-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.vp-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Fixed Content Card */
+.vp-content-card {
+  width: 440px; /* 40% of 1100px roughly */
+  flex: none; /* Prevents shrinking/growing */
+  background: white;
+  padding: 60px;
+  margin-left: -100px; /* Overlap from reference image */
+  z-index: 2;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+.vp-row.vp-reverse .vp-content-card {
+  margin-left: 0;
+  margin-right: -100px; 
+}
+
+.vp-content-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.vp-content-card p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.vp-link {
+  display: inline-block;
+  margin-top: 25px;
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 5px;
+}
+
+/* Unique classes for the Guide section */
+.vp-card-subtitle {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+/* --- Services Section (Fixed Size) --- */
+.services {
+  padding: 100px 0;
+  background-color: #ffffff;
+  min-width: 1100px; /* Ensures background doesn't clip */
+}
+
+.services-container {
+  width: 1100px; /* Locked width to match VP */
+  margin: 0 auto;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.services-main-title {
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* Fixed Grid Layout */
+.services-grid {
+  display: flex;
+  justify-content: space-between; /* Evenly spaces the 3 fixed cards */
+  width: 1100px;
+}
+
+.service-card {
+  width: 340px; /* Fixed width (340 * 3 + gaps = ~1100) */
+  flex: none; /* Prevents scaling */
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.service-image-fixed {
+  width: 340px;
+  height: 340px; /* Fixed square to unify different source images */
+  overflow: hidden;
+}
+
+.service-image-fixed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops image to fit the square exactly */
+}
+
+.service-content-fixed {
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.service-content-fixed h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.service-content-fixed p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Hover effect consistent with luxury feel */
+.service-card:hover {
+  transform: translateY(-5px);
+}
+/* --- Photo Gallery Section (Fixed Size) --- */
+.gallery-section {
+  padding: 100px 0;
+  background-color: #161616; /* Dark background to make photos pop, matching your bio */
+  color: white;
+  min-width: 1100px;
+}
+
+.gallery-container {
+  width: 1100px; /* Locked width */
+  margin: 0 auto;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gallery-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.gallery-main-title {
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main Display Box */
+.gallery-viewer {
+  position: relative; /* Essential for absolute positioning of buttons */
+  width: 1100px;
+  height: 550px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.gallery-viewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the high-end photos fill the frame perfectly */
+}
+
+/* Thumbnail Strip - Fixed Sizing */
+.thumbnail-strip {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 1100px;
+}
+
+.thumb {
+  width: 100px; /* Fixed square thumbnails */
+  height: 65px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.thumb:hover, .thumb.active {
+  opacity: 1;
+  border-color: var(--gold);
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 20px 15px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--gold);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.thumb.active {
+  border: 2px solid var(--gold);
+  opacity: 1;
+}
+/* --- Search Listings Section (Fixed Size) --- */
+.search-section {
+  width: 100%;
+  min-width: 1100px;
+  position: relative;
+}
+
+.search-bg-container {
+  height: 500px; /* Fixed height for the background section */
+  background: url('/images/search-bg.webp') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px; /* Space for the card overlap */
+}
+
+.search-overlay-text {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Fixed Card Logic */
+.search-card {
+  width: 1100px; /* Matches VP, Services, and Gallery */
+  background: white;
+  padding: 40px 60px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+  position: absolute;
+  bottom: -60px; /* Creates the overlap effect onto the next section */
+  z-index: 10;
+}
+
+.search-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* Form Layout */
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.small {
+  flex: 0 0 150px; /* Fixed smaller width for numbers/prices */
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #333;
+}
+
+.form-group select, 
+.form-group input {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.85rem;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.button-group {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.search-btn {
+  width: 100%;
+  padding: 12px;
+  background: #f0f0f0; /* Matches neutral button in image_c66fcf */
+  color: #333;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: var(--gold);
+  color: white;
+}
