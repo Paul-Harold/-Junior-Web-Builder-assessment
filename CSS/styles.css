@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box; /* Crucial: includes padding in width calculations */
+}
+
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents the horizontal scroll seen in your image */
+    width: 100%;
 }
 
 h1, h2, h3 {
@@ -25,6 +30,7 @@ h1, h2, h3 {
     width: 90%; 
     max-width: 1100px; 
     margin: 0 auto;
+    min-width: 0; /* Removes any hidden minimums */
 }
 
 .realtor-bio, .services, .gallery-section, .search-section, 
@@ -136,6 +142,7 @@ h1, h2, h3 {
     height: auto;
     min-height: 700px;
     position: relative;
+    padding: 100px 20px;
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
         url('https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/mtn%20falls%20pond.jpg/:/rs=w:2000,m');
@@ -242,7 +249,7 @@ h1, h2, h3 {
 
 .bio-image {
     position: relative;
-    flex: 0 0 400px; 
+
 }
 
 .bio-image img {
@@ -359,12 +366,9 @@ h1, h2, h3 {
 
 
 .vp-image-wrapper {
-  width: 660px; 
-  height: 440px;
-  flex: none; 
-  overflow: hidden;
+    flex: 1 1 60%; /* Uses 60% of width instead of fixed 660px */
+    height: 440px;
 }
-
 .vp-image-wrapper img {
   width: 100%;
   height: 100%;
@@ -377,14 +381,12 @@ h1, h2, h3 {
 }
 
 .vp-content-card {
-  width: 440px; 
-  flex: none; 
-  background: white;
-  padding: 60px;
-  margin-left: -100px; 
-  z-index: 2;
-  box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
-  box-sizing: border-box;
+  flex: 1 1 45%; /* Uses 45% of width instead of fixed 440px */
+    background: white;
+    padding: 40px;
+    margin-left: -80px; /* Overlap */
+    z-index: 2;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
 }
 
 .vp-row.vp-reverse .vp-content-card {
@@ -953,17 +955,4 @@ text-transform: uppercase;
     height: 1px;
     background-color: #333;
     margin-top: 10px;
-}
-.hero {
-    width: 100%;
-    height: auto;         /* Allow it to grow with content on mobile */
-    min-height: 600px;
-    padding: 60px 0;
-    background-attachment: scroll; /* Fixed backgrounds often break on mobile */
-}
-
-.hero-title {
-    font-size: clamp(2rem, 10vw, 4.5rem); /* Shrinks font automatically */
-    width: 90%;
-    margin: 0 auto;
 }
