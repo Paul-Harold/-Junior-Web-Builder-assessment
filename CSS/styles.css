@@ -458,20 +458,23 @@ h1, h2, h3 {
 
 .services-grid {
   display: flex;
-  justify-content: space-between;
+    flex-wrap: wrap;       
+    justify-content: center;
+    gap: 20px;
 }
 
 .service-card {
-  width: 340px; 
-  flex: none; 
-  background: white;
-  transition: transform 0.3s ease;
+  width: 100%;           /* Take full width on mobile */
+    max-width: 340px;      /* But never get bigger than 340px */
+    flex: 1 1 300px;
 }
 
 .service-image-fixed {
-  width: 340px;
-  height: 340px; 
-  overflow: hidden;
+ width: 100%;           /* Make the image container responsive */
+    max-width: 340px;
+    height: 340px; 
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .service-image-fixed img {
