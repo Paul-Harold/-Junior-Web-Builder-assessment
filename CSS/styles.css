@@ -3,11 +3,11 @@
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevents the horizontal scroll seen in your image */
     width: 100%;
+    overflow-x: hidden;      /* This cuts off any accidental side-scrolling */
+    position: relative;
 }
 
 h1, h2, h3 {
@@ -995,5 +995,84 @@ text-transform: uppercase;
     .sponsors-container {
         flex-wrap: wrap;
         gap: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .vp-row, .vp-row.vp-reverse {
+        flex-direction: column; /* Stack image and text */
+    }
+
+    .vp-content-card {
+        margin-left: 0 !important;   /* Kill the horizontal overlap */
+        margin-right: 0 !important;
+        margin-top: -50px !important; /* Overlap vertically instead */
+        width: 100%;
+    }
+}
+/* --- UNIVERSAL MOBILE OVERRIDE --- */
+@media (max-width: 768px) {
+    /* 1. Kill the Horizontal Scroll */
+    body, html {
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
+    /* 2. Fix the Services Section (The Culprit) */
+    .services-grid {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+        gap: 40px;
+    }
+
+    .service-card, 
+    .service-image-fixed {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto; /* Let height be natural */
+    }
+
+    /* 3. Fix the Gallery (The "Mess") */
+    .gallery-viewer {
+        height: 250px; /* Much smaller height for phone screens */
+        margin-bottom: 10px;
+    }
+
+    .thumbnail-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 thumbnails per row */
+        gap: 5px;
+        width: 100%;
+    }
+
+    .thumb {
+        width: 100% !important; /* Thumbnails grow to fill their grid spot */
+        height: 50px;
+    }
+
+    .nav-btn {
+        padding: 10px 5px;
+        font-size: 1.2rem; /* Shrink arrows so they don't block the view */
+    }
+
+    /* 4. Fix Value Proposition Stacking */
+    .vp-row, .vp-row.vp-reverse {
+        flex-direction: column !important;
+    }
+
+    .vp-image-wrapper {
+        width: 100% !important;
+        height: 250px;
+    }
+
+    .vp-content-card {
+        width: 100% !important;
+        margin: -30px 0 0 0 !important; /* Stack vertically with small overlap */
+        padding: 30px 20px;
+    }
+
+    /* 5. Fix Hero Title */
+    .hero-title {
+        font-size: 2.2rem !important; /* Shrink the giant text */
+        width: 95%;
     }
 }
