@@ -2,6 +2,7 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -12,9 +13,25 @@ h1, h2, h3 {
   --gold: #c5a059;
   --dark: #1a1a1a;
 }
+.navbar, 
+.bio-container, 
+.vp-container, 
+.services-container, 
+.gallery-container, 
+.search-card, 
+.sponsors-container, 
+.contact-container, 
+.footer-container {
+    width: 90%; 
+    max-width: 1100px; 
+    margin: 0 auto;
+}
 
+.realtor-bio, .services, .gallery-section, .search-section, 
+.contact-us, .location-compact, .main-footer {
+    width: 100%;
+}
 .navbar {
-    width: 1100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -22,7 +39,6 @@ h1, h2, h3 {
     padding: 80px 0; 
     position: relative;
     background: #fff;
-    min-width: 1100px; 
 }
 .hamburger {
     cursor: pointer;
@@ -52,7 +68,7 @@ h1, h2, h3 {
     z-index: 10;
 }
 .Logo img {
-    height: 135px; 
+    height: clamp(60px, 10vw, 135px); 
     width: auto;
 }
 .sidebar {
@@ -213,11 +229,9 @@ h1, h2, h3 {
     padding: 120px 0;
     background-color: #161616; 
     color: white;
-    min-width: 1100px;
 }
 
 .bio-container {
-    width: 1100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -308,7 +322,6 @@ h1, h2, h3 {
 
 .vp-container {
  width: 90%; 
-  max-width: 1100px; 
   margin: 0 auto;
 }
 
@@ -336,7 +349,6 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
-  width: 1100px;
   flex-shrink: 0;
 }
 
@@ -415,11 +427,9 @@ h1, h2, h3 {
 .services {
   padding: 100px 0;
   background-color: #ffffff;
-  min-width: 1100px; 
 }
 
 .services-container {
-  width: 1100px; 
   margin: 0 auto;
 }
 
@@ -446,7 +456,6 @@ h1, h2, h3 {
 .services-grid {
   display: flex;
   justify-content: space-between;
-  width: 1100px;
 }
 
 .service-card {
@@ -495,11 +504,9 @@ h1, h2, h3 {
   padding: 100px 0;
   background-color: #161616; 
   color: white;
-  min-width: 1100px;
 }
 
 .gallery-container {
-  width: 1100px; 
   margin: 0 auto;
 }
 
@@ -527,7 +534,6 @@ text-transform: uppercase;
 
 .gallery-viewer {
   position: relative; 
-  width: 1100px;
   height: 550px;
   margin-bottom: 15px;
   overflow: hidden;
@@ -544,7 +550,6 @@ text-transform: uppercase;
   display: flex;
   justify-content: center;
   gap: 10px;
-  width: 1100px;
 }
 
 .thumb {
@@ -590,7 +595,6 @@ text-transform: uppercase;
 }
 .search-section {
   width: 100%;
-  min-width: 1100px;
   position: relative;
 }
 
@@ -615,7 +619,6 @@ text-transform: uppercase;
 }
 
 .search-card {
-  width: 1100px;
   background: white;
   padding: 40px 60px;
   box-shadow: 0 15px 45px rgba(0,0,0,0.1);
@@ -707,7 +710,6 @@ text-transform: uppercase;
 }
 .sponsors-container {
     width: 90%;          
-    max-width: 1100px;   
     margin: 0 auto;     
     display: flex;
     justify-content: center;
@@ -739,7 +741,6 @@ text-transform: uppercase;
 
 .contact-container {
     width: 90%;          
-    max-width: 1100px;  
     margin: 0 auto;
 }
 
@@ -861,7 +862,6 @@ text-transform: uppercase;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 1100px;
 }
 
 .location-header {
@@ -889,7 +889,6 @@ text-transform: uppercase;
 
 .map-wrapper {
     width: 80%;
-    max-width: 1100px;
     height: 350px;
     border-radius: 12px;
     overflow: hidden;
@@ -902,7 +901,6 @@ text-transform: uppercase;
     color: #ffffff;
     padding: 60px 0 40px 0;
     position: relative;
-    min-width: 1100px;
 }
 
 .footer-notch {
@@ -918,7 +916,6 @@ text-transform: uppercase;
 }
 
 .footer-container {
-    width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
